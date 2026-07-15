@@ -11,7 +11,7 @@ class Solution {
                 sum += Long.valueOf(s.charAt(i) - '0');
             }
         }
-        if(b.length()==0){
+        if (b.length() == 0) {
             return 0;
         }
         nonzero = Long.valueOf(String.valueOf(b));
