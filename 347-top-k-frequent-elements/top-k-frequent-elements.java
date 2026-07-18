@@ -1,6 +1,5 @@
 class Solution {
     public int[] topKFrequent(int[] nums, int k) {
-
         HashMap<Integer, Integer> map = new HashMap<>();
         Arrays.sort(nums);
         for (int i = 0; i < nums.length; i++) {
@@ -12,9 +11,7 @@ class Solution {
             }
         }
         SortedSet<Integer> sort = new TreeSet<>(map.values());
-
         Integer[] freq = sort.toArray(new Integer[0]);
-
         int[] result = new int[k];
         int index = 0;
 
