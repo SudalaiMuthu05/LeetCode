@@ -1,5 +1,6 @@
 class Solution {
     public int[] sortEvenOdd(int[] nums) {
+        if(nums.length <= 2) return nums;
         int even_index = 0;
         int odd_index = 0;
         ArrayList<Integer> even_arr = new ArrayList<>();
