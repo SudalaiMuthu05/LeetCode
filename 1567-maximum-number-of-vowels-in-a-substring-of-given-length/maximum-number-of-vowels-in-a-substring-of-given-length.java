@@ -14,7 +14,7 @@ class Solution {
 
         // }
         // return maxcount;
-        
+
         int maxcount = 0;
         int count = 0;
         for (int i = 0; i < k; i++) {
@@ -33,7 +33,7 @@ class Solution {
             }
             maxcount = Math.max(maxcount, count);
 
-            //if(maxcount == k) return k;
+            if(maxcount == k) return k;
 
         }
         return maxcount;
