@@ -33,7 +33,8 @@ class Solution {
             }
             maxcount = Math.max(maxcount, count);
 
-            if(maxcount == k) return k;
+            if (maxcount == k)
+                return k;
 
         }
         return maxcount;
