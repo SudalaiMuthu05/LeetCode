@@ -8,15 +8,15 @@ class Solution {
                 map.put(x, 1);
             }
         }
-        ArrayList<Integer> al = new ArrayList<>();
-        for (int x : map.values()) {
-            al.add(x);
-        }
+        // ArrayList<Integer> al = new ArrayList<>();
+        // for (int x : map.values()) {
+        //     al.add(x);
+        // }
         HashSet<Integer> set = new HashSet<>();
         for (int x : map.values()) {
             set.add(x);
         }
-        if (al.size() == set.size()) {
+        if (map.size() == set.size()) {
             return true;
         }
         return false;
