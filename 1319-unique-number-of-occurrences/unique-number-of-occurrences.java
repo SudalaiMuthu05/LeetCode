@@ -8,7 +8,6 @@ class Solution {
                 map.put(x, 1);
             }
         }
-        int temp = 0;
         ArrayList<Integer> al = new ArrayList<>();
         for (int x : map.values()) {
             al.add(x);
