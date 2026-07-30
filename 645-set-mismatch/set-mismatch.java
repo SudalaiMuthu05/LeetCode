@@ -31,39 +31,5 @@ class Solution {
         }
         res[index] = missing_num;
         return res;
-
-        // HashMap<Integer, Integer> map1 = new HashMap<>();
-        // HashMap<Integer, Integer> map2 = new HashMap<>();
-
-        // for (int x : nums) {
-        //     if (map1.containsKey(x)) {
-        //         map1.put(x, map1.get(x) + 1);
-        //     } else {
-        //         map1.put(x, 1);
-        //     }
-        // }
-        // for (int i = 1; i <= nums.length; i++) {
-        //     map2.put(i, map1.getOrDefault(i, 0));
-        // }
-
-        // ArrayList<Integer> lst = new ArrayList<>();
-        // for (int x : map2.keySet()) {
-        //     if (map2.get(x) > 1) {
-        //         lst.add(x);
-        //     }
-        // }
-
-        // for (int x : map2.keySet()) {
-        //     if (map2.get(x) == 0) {
-        //         lst.add(x);
-        //     }
-        // }
-        // int[] arr = new int[lst.size()];
-        // int index = 0;
-        // for (int x : lst) {
-        //     arr[index++] = x;
-        // }
-        // // Arrays.sort(arr);
-        // return arr;
     }
 }
