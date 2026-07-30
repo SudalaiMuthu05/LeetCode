@@ -13,7 +13,12 @@ class Solution {
                 lst.add(x);
             }
         }
-        int[] result = lst.stream().mapToInt(Integer::intValue).toArray();
+        // int[] result = lst.stream().mapToInt(Integer::intValue).toArray();
+        int[] result = new int[lst.size()];
+        int index = 0;
+        for(int x : lst){
+            result[index++] = x;
+        }
         return result;
     }
 }
