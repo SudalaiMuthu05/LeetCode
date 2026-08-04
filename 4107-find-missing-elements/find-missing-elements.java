@@ -3,24 +3,20 @@ class Solution {
         HashMap<Integer, Integer> map = new HashMap<>();
         List<Integer> result = new ArrayList<>();
 
-        if(nums.length == 0 ){
+        if (nums.length == 0) {
             return result;
         }
-
-        int max  = Integer.MIN_VALUE;
+        int max = Integer.MIN_VALUE;
         int min = Integer.MAX_VALUE;
 
-        // Arrays.sort(nums);
-        for(int i = 0;i<nums.length;i++){
-            max = Math.max(max,nums[i]);
-            min = Math.min(min,nums[i]);
+        for (int i = 0; i < nums.length; i++) {
+            max = Math.max(max, nums[i]);
+            min = Math.min(min, nums[i]);
         }
 
         for (int x : nums) {
             map.put(x, map.getOrDefault(x, 0) + 1);
         }
-        // int start = nums[0];
-        // int end = nums[nums.length - 1];
 
         for (int i = min; i <= max; i++) {
             map.put(i, map.getOrDefault(i, 0) + 1);
