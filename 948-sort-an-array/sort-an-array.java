@@ -1,4 +1,10 @@
 class Solution {
+    public int[] sortArray(int[] nums) {
+
+        Merge(nums, nums.length);
+        return nums;
+    }
+
     public static void Merge(int[] arr, int n) {
 
         if (n < 2) {
@@ -41,12 +47,5 @@ class Solution {
         while (j < right) {
             arr[k++] = right_arr[j++];
         }
-    }
-
-    public int[] sortArray(int[] nums) {
-
-        Merge(nums, nums.length);
-        return nums;
-
     }
 }
