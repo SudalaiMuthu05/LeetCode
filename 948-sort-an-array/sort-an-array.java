@@ -1,51 +1,55 @@
+import java.util.*;
+
 class Solution {
     public int[] sortArray(int[] nums) {
-
-        Merge(nums, nums.length);
+        int n = nums.length;
+        mergeSort(nums, n);
         return nums;
     }
 
-    public static void Merge(int[] arr, int n) {
-
-        if (n < 2) {
+    public static void mergeSort(int[] nums, int n) {
+        if (nums.length < 2) {
             return;
         }
-        int start = 0;
-        int end = n;
-        int mid = (start + end) / 2;
-
-        int[] left = new int[mid];
-        int[] right = new int[n - mid];
-
+        int mid = nums.length / 2;
+        int[] leftarr = new int[mid];
+        int[] rightarr = new int[nums.length - mid];
         for (int i = 0; i < mid; i++) {
-            left[i] = arr[i];
+            leftarr[i] = nums[i];
         }
-        for (int i = mid; i < end; i++) {
-            right[i - mid] = arr[i];
+        int k = 0;
+        for (int i = mid; i < nums.length; i++) {
+            rightarr[k] = nums[i];
+            k++;
         }
-        Merge(arr, mid);
-        Merge(left, mid);
-        Merge(right, n - mid);
-        MergeSort(arr, left, right, mid, n - mid);
+        mergeSort(leftarr, leftarr.length);
+        mergeSort(rightarr, rightarr.length);
+        merge(nums, leftarr, rightarr);
     }
 
-    public static void MergeSort(int[] arr, int[] left_arr, int[] right_arr, int left, int right) {
+    public static void merge(int[] nums, int[] leftarr, int[] rightarr) {
         int i = 0;
         int j = 0;
         int k = 0;
-
-        while (i < left && j < right) {
-            if (left_arr[i] < right_arr[j]) {
-                arr[k++] = left_arr[i++];
+        while (i < leftarr.length && j < rightarr.length) {
+            if (leftarr[i] < rightarr[j]) {
+                nums[k] = leftarr[i];
+                i++;
             } else {
-                arr[k++] = right_arr[j++];
+                nums[k] = rightarr[j];
+                j++;
             }
+            k++;
         }
-        while (i < left) {
-            arr[k++] = left_arr[i++];
+        while (i < leftarr.length) {
+            nums[k] = leftarr[i];
+            i++;
+            k++;
         }
-        while (j < right) {
-            arr[k++] = right_arr[j++];
+        while (j < rightarr.length) {
+            nums[k] = rightarr[j];
+            j++;
+            k++;
         }
     }
 }
