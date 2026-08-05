@@ -16,18 +16,14 @@ class Solution {
                 normal.append(sc[i]);
             }
         }
-
         char[] vow = vowels.reverse().toString().toCharArray();
         char[] norm = normal.toString().toCharArray();
-
         int index = 0;
-
         for (int i = 0; i < norm.length; i++) {
             if (norm[i] == '\0') {
                 norm[i] = vow[index++];
             }
         }
-
         return new String(norm);
     }
 }
